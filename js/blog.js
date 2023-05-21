@@ -2,12 +2,16 @@ let dataBlog=[]
 
 function addBlog(event){
     event.preventDefault()
+        let title = document.getElementById('input-blog-title').value
+        let startDate = new Date (document.getElementById('input-start-date').value)
+        let endDate = new Date (document.getElementById('input-end-date').value)
+        let description = document.getElementById('input-blog-desc').value
+        let image = document.getElementById('image-upload').files
 
-    let title = document.getElementById('input-blog-title').value
-    let startDate = document.getElementById('input-start-date').value
-    let endDate = document.getElementById('input-end-date').value
-    let description = document.getElementById('input-blog-desc').value
-    let image = document.getElementById('image-upload').files
+    let diff = Math.abs(endDate - startDate); 
+    let months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30)); 
+    let days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 30;
+
 
     
     const htmlIcon = '<img class="img-icon" src="./assets/images/svg/html5.svg">';
@@ -33,8 +37,8 @@ function addBlog(event){
 
     let blog = {
         title,
-        startDate,
-        endDate,
+        months,
+        days,
         description,
         image,
         checkHtml,
@@ -60,7 +64,7 @@ function renderBlog() {
                 <img src=${dataBlog[index].image} alt="" >
             </div>
             <div class="title-project">${dataBlog[index].title}</div>
-            <div class="duration-project">${dataBlog[index].startDate}-${dataBlog[index].endDate}
+            <div class="duration-project">Duration : ${dataBlog[index].months} Bulan, ${dataBlog[index].days} Hari
             <div class="mini-desc-project">${dataBlog[index].description}</div>
             <div class="tech-project">
                 ${dataBlog[index].checkHtml}
@@ -97,3 +101,4 @@ function formSubmit(){
       return alert("Attach File Required");
     }
 }
+
