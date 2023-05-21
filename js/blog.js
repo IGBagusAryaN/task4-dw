@@ -10,10 +10,10 @@ function addBlog(event){
     let image = document.getElementById('image-upload').files
 
     
-    const htmlIcon = '<img class="img-icon" src="./assets/images/svg/html5.svg"></i>';
-    const cssIcon = '<img class="img-icon" src="./assets/images/svg/css3.svg"></i>';
-    const reactjsIcon = '<img class="img-icon" src="./assets/images/svg/reactjs.svg"></i>';
-    const javascriptIcon = '<img class="img-icon" src="./assets/images/svg/javascript.svg"></i>';
+    const htmlIcon = '<img class="img-icon" src="./assets/images/svg/html5.svg">';
+    const cssIcon = '<img class="img-icon" src="./assets/images/svg/css3.svg">';
+    const reactjsIcon = '<img class="img-icon" src="./assets/images/svg/reactjs.svg">';
+    const javascriptIcon = '<img class="img-icon" src="./assets/images/svg/javascript.svg">';
 
     let checkHtml = document.getElementById("input-checkbox-html").checked
         ? htmlIcon
